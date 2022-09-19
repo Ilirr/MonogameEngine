@@ -38,7 +38,7 @@ namespace Monogame_Engine
 
 
 
-            if (input.IsPressed(Keys.W) && hasJumped == false)// if jump
+            if (input.IsPressed(Keys.W) && hasJumped == false)
             {
 
                 position.Y -= 10f;

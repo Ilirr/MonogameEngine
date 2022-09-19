@@ -19,8 +19,6 @@ namespace Monogame_Engine
         }
         public List<Component> Components { get; set; }
 
-
-
         private bool isActive;
         int id;
         string name;

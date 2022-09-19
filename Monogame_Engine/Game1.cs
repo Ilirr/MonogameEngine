@@ -15,7 +15,9 @@ namespace Monogame_Engine
 
         public static Game1 Instance { get; private set; }
 
+        Player player;
 
+        
         public Game1()
         {
             Instance = this;
@@ -23,9 +25,10 @@ namespace Monogame_Engine
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
             this.IsFixedTimeStep = true;
+          
 
         }
-
+        
         protected override void Initialize()
         {
               GameObjectManager.Create();
@@ -38,8 +41,8 @@ namespace Monogame_Engine
 
         protected override void LoadContent()
         {
-            // player = GameObjectManager.Instance.CreateGameObject<Player>();
-            //player.Awake();
+     
+            GameObjectManager.Instance.CreateGameObject<Player>();
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         }
@@ -49,6 +52,7 @@ namespace Monogame_Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
              GameObjectManager.Instance.Update(gameTime);
+
 
             /*  ProcessInput();  // handle input events
                 UpdateGameWorld();  // update game objects

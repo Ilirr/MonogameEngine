@@ -34,7 +34,7 @@ namespace Monogame_Engine
         }
         #endregion
         #region Constructors
-        public StateManager(Game1 game)
+        public StateManager(Game1 game) // GraphicsDevice graphicsDevice, ContentManager content)
         {
             this.game = game;
             this.graphicsDevice = game.GraphicsDevice;
@@ -57,21 +57,5 @@ namespace Monogame_Engine
      * #region Methods
     public abstract void Update(GameTime gameTime);
     public abstract void Draw(GameTime gameTime, SpriteBatch spriteBatch);
-
-    public StateManager(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
-    {
-
-
-        this.game = game;
-        this.graphicsDevice = graphicsDevice;
-        this.content = content;
-
-    }
-
-    #endregion
-     * 
-     * 
-     * 
-     * 
-     */
+    */    
 }
