@@ -1,11 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Serilog.Configuration;
+using Serilog;
+using Serilog.Debugging;
 
 namespace Monogame_Engine
 {
     public class Game1 : Game
     {
+        private Serilog.Core.Logger logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
@@ -24,7 +28,7 @@ namespace Monogame_Engine
 
         protected override void Initialize()
         {
-            //  GameObjectManager.Create();
+              GameObjectManager.Create();
             //   logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
 
@@ -44,7 +48,7 @@ namespace Monogame_Engine
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-            // GameObjectManager.Instance.Update(gameTime);
+             GameObjectManager.Instance.Update(gameTime);
 
             /*  ProcessInput();  // handle input events
                 UpdateGameWorld();  // update game objects
