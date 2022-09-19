@@ -15,8 +15,6 @@ namespace Monogame_Engine
 
         public static Game1 Instance { get; private set; }
 
-        Player player;
-
         
         public Game1()
         {
@@ -32,6 +30,7 @@ namespace Monogame_Engine
         protected override void Initialize()
         {
               GameObjectManager.Create();
+            GameObjectManager.Instance.CreateGameObject<Player>();
             //   logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
 
@@ -42,17 +41,17 @@ namespace Monogame_Engine
         protected override void LoadContent()
         {
      
-            GameObjectManager.Instance.CreateGameObject<Player>();
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
         }
 
         protected override void Update(GameTime gameTime)
         {
+
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
              GameObjectManager.Instance.Update(gameTime);
-
+            Player.Instance.Update(gameTime);
 
             /*  ProcessInput();  // handle input events
                 UpdateGameWorld();  // update game objects

@@ -53,7 +53,7 @@ namespace Monogame_Engine
         }
         public void QueueRemoveObject(GameObject gameObject)
         {
-            removedGameObjects.AddLast(gameObject); // prepare for update() to remove it.
+            removedGameObjects.AddLast(gameObject);
 
         }
         public T CreateGameObject<T>() where T : GameObject, new()

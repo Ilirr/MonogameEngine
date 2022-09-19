@@ -14,7 +14,7 @@ namespace Monogame_Engine
         private static readonly Lazy<Player> lazy = new Lazy<Player>(() => new Player());
         public static Player Instance { get { return lazy.Value; } }
 
-        public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("P");
+       // public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("P");
         public Vector2 position;
         public Vector2 velocity;
         public bool hasJumped; // enum it
@@ -26,13 +26,13 @@ namespace Monogame_Engine
         }
         public override void Start()
         {
-            input = new Input();
+           input = new Input();
 
             Console.WriteLine("Start");
         }
         public override void Update(GameTime gameTime)
         {
-            input.lastState = input.currentState;
+           /* input.lastState = input.currentState;
             input.currentState = Keyboard.GetState();
             var delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
 
@@ -69,7 +69,7 @@ namespace Monogame_Engine
             }
             velocity.X = 0f;
             position += velocity;
-
+           */
 
         }
         public override void Awake()
