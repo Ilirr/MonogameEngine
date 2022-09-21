@@ -19,11 +19,11 @@ namespace Monogame_Engine
        // public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("Character");
         public Vector2 position;
         public Vector2 velocity;
-        public bool hasJumped; // enum it
         public Input input;
         private float speed = 50;
         public Player()
         {
+
         }
         public override void Start()
         {

@@ -13,11 +13,6 @@ namespace Monogame_Engine
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public static Serilog.Core.Logger SeriInstance
-        {
-            get => logger;
-        }
-
         public static Game1 Instance { get; private set; }
 
         
