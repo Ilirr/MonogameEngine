@@ -9,9 +9,14 @@ namespace Monogame_Engine
 {
     public class Game1 : Game
     {
-        private Serilog.Core.Logger logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+        private static Serilog.Core.Logger logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+
+        public static Serilog.Core.Logger SeriInstance
+        {
+            get => logger;
+        }
 
         public static Game1 Instance { get; private set; }
 
@@ -30,8 +35,8 @@ namespace Monogame_Engine
         protected override void Initialize()
         {
               GameObjectManager.Create();
-            GameObjectManager.Instance.CreateGameObject<Player>();
-            //   logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
+             GameObjectManager.Instance.CreateGameObject<Player>();
+             logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
 
 
@@ -51,8 +56,6 @@ namespace Monogame_Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
              GameObjectManager.Instance.Update(gameTime);
-            Player.Instance.Update(gameTime);
-
             /*  ProcessInput();  // handle input events
                 UpdateGameWorld();  // update game objects
                 RenderFrame();  // each render object draws itself
