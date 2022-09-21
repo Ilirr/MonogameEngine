@@ -51,8 +51,7 @@ namespace Monogame_Engine
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
              GameObjectManager.Instance.Update(gameTime);
-            /*  ProcessInput();  // handle input events
-                UpdateGameWorld();  // update game objects
+            /*  
                 RenderFrame();  // each render object draws itself
 
             */

@@ -25,6 +25,7 @@ namespace Monogame_Engine
 
         public Button(Rectangle rectangle, string text, Texture2D texture, SpriteFont font) : base(null)
         {
+            
             Texture = texture;
             Font = font;
             Color = Color.White;
@@ -38,10 +39,14 @@ namespace Monogame_Engine
         }
 
 
-
+        
         public override void Awake()
         {
             Console.WriteLine("Awake");
+        }
+        public override void Draw()
+        {
+           
         }
         public override void Destroy()
         {
