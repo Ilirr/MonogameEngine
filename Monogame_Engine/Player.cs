@@ -27,6 +27,7 @@ namespace Monogame_Engine
         }
         public override void Start()
         {
+            this.AddComponent<TestComponent>();
             input = new Input();
 
             Console.WriteLine("Player.Start()");
@@ -39,7 +40,6 @@ namespace Monogame_Engine
         }
         public override void Awake()
         {
-            this.AddComponent<TestComponent>();
          
 
             Console.WriteLine("Player is Awake");

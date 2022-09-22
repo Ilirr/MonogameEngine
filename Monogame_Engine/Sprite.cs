@@ -36,6 +36,11 @@ namespace Monogame_Engine
         {
 
         }
+        public override void Draw()
+        {
+            throw new NotImplementedException();
+
+        }
         public override void Awake()
         {
             throw new NotImplementedException();

@@ -17,6 +17,15 @@ namespace Monogame_Engine.Drawing
         public static Color CurrentColor = Color.White;
 
 
+        public static void Initialize(GraphicsDevice device)
+        {
+            Device = device;
+        }
+        public static void Update(GameTime gameTime)
+        {
+            
+        }
+
 
 
     }

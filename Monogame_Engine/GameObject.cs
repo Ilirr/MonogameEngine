@@ -33,6 +33,15 @@ namespace Monogame_Engine
             }
 
         }
+
+        public virtual void Draw()
+        {
+            foreach (Component component in Components)
+            {
+                component.Draw();
+
+            }
+        }
         public virtual void Update(GameTime gameTime)
         {
             foreach (Component component in Components)
