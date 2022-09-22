@@ -14,13 +14,13 @@ namespace Monogame_Engine
         private static readonly Lazy<Player> lazy = new Lazy<Player>(() => new Player());
         public static Player Instance { get { return lazy.Value; } }
 
-        
 
-       // public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("Character");
+
+        // public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("Character");
         public Vector2 position;
         public Vector2 velocity;
         public Input input;
-        private float speed = 50;
+        private float speed = 2;
         public Player()
         {
 
@@ -34,13 +34,20 @@ namespace Monogame_Engine
         }
         public override void Update(GameTime gameTime)
         {
-              input.lastState = input.currentState;
-              input.currentState = Keyboard.GetState();
+            input.lastState = input.currentState;
+            input.currentState = Keyboard.GetState();
+            if(input.IsKeyUp(Keys.W))
+            {
+                position.Y += position.Y * speed;
+            }
+
+
+
 
         }
         public override void Awake()
         {
-         
+
 
             Console.WriteLine("Player is Awake");
         }

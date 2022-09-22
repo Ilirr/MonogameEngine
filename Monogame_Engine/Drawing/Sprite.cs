@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using Monogame_Engine.Drawing;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,17 +7,17 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 
 
-namespace Monogame_Engine
+namespace Monogame_Engine.Drawing
 {
-    public class Sprite : Component
+    public abstract class Sprite : Component
     {
         private Frame[] frames;
         Texture2D m_Sprite;
         Rectangle m_SourceRectangle;
         float m_Rotation;
         Color m_ColorTint;
-        Vector2 m_DestinationRectangle;
-        Vector2 Origin;
+        Vector2 Position;
+        
 
 
         public Sprite() : base(null)
@@ -28,35 +27,32 @@ namespace Monogame_Engine
             m_SourceRectangle = new Rectangle(0, 0, 0, 0);
             m_Rotation = 0.0f;
             m_ColorTint = Color.White;
-            m_DestinationRectangle = new Vector2(0, 0);
+           
         }
 
 
+        //Subclass (Sprite) is abstract, does not need to override Draw()
         protected override void ComponentUpdate()
         {
-
-        }
-        public override void Draw()
-        {
-            throw new NotImplementedException();
+            Console.WriteLine("Sprite.ComponentUpdate()");
 
         }
         public override void Awake()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Sprite.Awake()");
         }
         public override void Destroy()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Sprite.Destroy()");
         }
         public override void Remove()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Sprite.Remove()");
         }
 
         public void Render(SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Sprite.Render()");
         }
 
 
