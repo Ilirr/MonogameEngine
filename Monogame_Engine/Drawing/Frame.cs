@@ -42,7 +42,6 @@ namespace Monogame_Engine.Drawing
         {
             Texture = texture;
             TexturePosition = texturePosition;
-
             Origin = origin;
         }
         public override void Draw()

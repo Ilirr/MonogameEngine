@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Serilog.Configuration;
 using Serilog;
 using Serilog.Debugging;
+using Monogame_Engine.Drawing;
 
 namespace Monogame_Engine
 {
