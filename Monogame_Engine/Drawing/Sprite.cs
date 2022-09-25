@@ -22,11 +22,7 @@ namespace Monogame_Engine.Drawing
 
         public Sprite() : base(null)
         {
-            frames = new Frame[0];
-            m_Texture2D = null;
-            m_SourceRectangle = new Rectangle(0, 0, 0, 0);
-            m_Rotation = 0.0f;
-            m_ColorTint = Color.White;
+
            
         }
 

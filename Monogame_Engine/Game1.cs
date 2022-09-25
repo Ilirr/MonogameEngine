@@ -43,6 +43,7 @@ namespace Monogame_Engine
         {
      
             _spriteBatch = new SpriteBatch(GraphicsDevice);
+
         }
 
         protected override void Update(GameTime gameTime)
