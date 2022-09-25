@@ -9,21 +9,21 @@ using Microsoft.Xna.Framework;
 
 namespace Monogame_Engine.Drawing
 {
-    public abstract class Sprite : Component
+    public class Sprite : Component
     {
         private Frame[] frames;
-        Texture2D m_Sprite;
-        Rectangle m_SourceRectangle;
-        float m_Rotation;
-        Color m_ColorTint;
-        Vector2 Position;
+        public Texture2D m_Texture2D;
+        public Rectangle m_SourceRectangle;
+        public float m_Rotation;
+        public Color m_ColorTint;
+        public Vector2 Position;
         
 
 
         public Sprite() : base(null)
         {
             frames = new Frame[0];
-            m_Sprite = null;
+            m_Texture2D = null;
             m_SourceRectangle = new Rectangle(0, 0, 0, 0);
             m_Rotation = 0.0f;
             m_ColorTint = Color.White;
@@ -48,6 +48,10 @@ namespace Monogame_Engine.Drawing
         public override void Remove()
         {
             Console.WriteLine("Sprite.Remove()");
+        }
+        public override void Draw()
+        {
+            Console.WriteLine("Sprite.Draw()");
         }
 
         public void Render(SpriteBatch spriteBatch)

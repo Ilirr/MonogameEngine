@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,15 @@ namespace Monogame_Engine
             foreach (GameObject gameObject in activeGameObjects)
             {
                 gameObject.Update(gameTime);
+            }
+
+        }
+        public void Draw(SpriteBatch batch)
+        {
+            foreach (GameObject gameObject in activeGameObjects)
+            {
+                gameObject.Draw();
+
             }
 
         }

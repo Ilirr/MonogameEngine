@@ -10,21 +10,9 @@ using Microsoft.Xna.Framework;
 
 namespace Monogame_Engine.Drawing
 {
-    internal static class GraphicsManager
+    internal class GraphicsManager
     {
-        public static GraphicsDevice Device { get; private set; }
-
-        public static Color CurrentColor = Color.White;
-
-
-        public static void Initialize(GraphicsDevice device)
-        {
-            Device = device;
-        }
-        public static void Update(GameTime gameTime)
-        {
-            
-        }
+        
 
 
 
