@@ -21,6 +21,9 @@ namespace Monogame_Engine
 
         public Sprite m_Sprite;
 
+        public Vector2 position = Vector2.Zero;
+        public Vector2 velocity;
+
         private bool isActive;
         int id;
         string name;

@@ -12,10 +12,16 @@ namespace Monogame_Engine.Drawing
     public class Sprite : Component
     {
         private Frame[] frames;
+
+
         public Texture2D m_Texture2D;
         public Rectangle m_SourceRectangle;
+
+
         public float m_Rotation;
         public Color m_ColorTint;
+
+
         public Vector2 Position;
 
 
@@ -53,7 +59,7 @@ namespace Monogame_Engine.Drawing
 
         public void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Owner.m_Sprite.m_Texture2D, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(Owner.m_Sprite.m_Texture2D, Owner.position, Color.White);
 
             Console.WriteLine("Sprite.Render()");
         }

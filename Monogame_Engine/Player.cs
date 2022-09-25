@@ -16,8 +16,6 @@ namespace Monogame_Engine
         private static readonly Lazy<Player> lazy = new Lazy<Player>(() => new Player());
         public static Player Instance { get { return lazy.Value; } }
 
-        public Vector2 position;
-        public Vector2 velocity;
         public Input input;
         private float speed = 2;
         public Player()
@@ -40,7 +38,7 @@ namespace Monogame_Engine
             input.currentState = Keyboard.GetState();
             if (input.IsKeyUp(Keys.W))
             {
-                position.Y += position.Y * speed;
+                position.Y += 30;
             }
         }
         
