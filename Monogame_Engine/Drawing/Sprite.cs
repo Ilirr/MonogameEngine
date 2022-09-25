@@ -17,13 +17,13 @@ namespace Monogame_Engine.Drawing
         public float m_Rotation;
         public Color m_ColorTint;
         public Vector2 Position;
-        
+
 
 
         public Sprite() : base(null)
         {
 
-           
+
         }
 
 
@@ -48,63 +48,14 @@ namespace Monogame_Engine.Drawing
         public override void Draw()
         {
             Console.WriteLine("Sprite.Draw()");
+
         }
 
         public void Render(SpriteBatch spriteBatch)
         {
+            spriteBatch.Draw(Owner.m_Sprite.m_Texture2D, new Vector2(0, 0), Color.White);
+
             Console.WriteLine("Sprite.Render()");
         }
-
-
-
-
-
-
-        /*  public Sprite(Frame[] frames, int originX,int originY, string name = "")
-          {
-
-              _frames = frames;
-              foreach (Frame frame in _frames)
-              {
-                  frame.ParentSprite = this;
-
-              }
-              Array.Copy(frames, _frames, frames.Length);
-
-              Origin = new Vector2(originX, originY);
-              Name = name;
-
-          }
-          public void Render(SpriteBatch spriteBatch)
-          {
-
-          }
-          public override void Draw()
-          {
-              throw new NotImplementedException();
-          }
-
-          public object Clone()
-          {
-              var frames = new List<Frame>();
-              foreach (Frame frame in _frames)
-              {
-                  frames.Add((Frame)frame.Clone());
-
-
-              }
-              var sprite = new Sprite(frames.ToArray(), (int)Origin.X, (int)Origin.Y, Name);
-              sprite.Position = Position;
-              //sprite.Scale = Scale;
-              //sprite.Animation = Animation;
-              //sprite.Rotation = Rotation;
-              //sprite.Color = Color;
-              return sprite;
-
-          }
-
-      }
-        */
-
     }
 }

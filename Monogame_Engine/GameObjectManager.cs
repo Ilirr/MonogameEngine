@@ -87,16 +87,14 @@ namespace Monogame_Engine
             }
 
         }
-        public void Draw(SpriteBatch batch)
+        public void Render(SpriteBatch spriteBatch)
         {
             foreach (GameObject gameObject in activeGameObjects)
             {
-                gameObject.Draw();
+                gameObject.m_Sprite.Render(spriteBatch);
 
             }
 
         }
-
-
     }
 }

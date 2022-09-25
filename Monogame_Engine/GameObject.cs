@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System.Runtime.Serialization;
-
+using Monogame_Engine.Drawing;
 
 namespace Monogame_Engine
 {
@@ -18,6 +18,8 @@ namespace Monogame_Engine
             Components = new List<Component>();
         }
         public List<Component> Components { get; set; }
+
+        public Sprite m_Sprite;
 
         private bool isActive;
         int id;

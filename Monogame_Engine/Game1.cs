@@ -16,7 +16,6 @@ namespace Monogame_Engine
 
         public static Game1 Instance { get; private set; }
 
-        
         public Game1()
         {
             Instance = this;
@@ -44,9 +43,9 @@ namespace Monogame_Engine
      
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
-        }
+    }
 
-        protected override void Update(GameTime gameTime)
+    protected override void Update(GameTime gameTime)
         {
 
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
@@ -63,8 +62,9 @@ namespace Monogame_Engine
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-
+            _spriteBatch.Begin();
+            GameObjectManager.Instance.Render(_spriteBatch);
+            _spriteBatch.End();
             base.Draw(gameTime);
         }
     }
