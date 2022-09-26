@@ -11,6 +11,7 @@ namespace Monogame_Engine
     {
 
         public Vector2 velocity;
+        public float acceleration;
 
         public Rigidbody2D() : base(null)
         {

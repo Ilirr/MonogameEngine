@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
-
+using Monogame_Engine.Drawing;
 
 namespace Monogame_Engine
 {
-    public class Button : GameObject
+    public class Button : UISelectable
     {
         public event EventHandler Click;
         public bool Clicked { get; private set; }
@@ -18,37 +18,19 @@ namespace Monogame_Engine
         public Color Color { get; set; }
         private Vector2 Position { get; set; }
         private Texture2D Texture;
-        private SpriteFont Font;
+        private Font Font;
         private string text;
         private int textSize;
         private Rectangle rectangle;
 
         public Button()
         {
+            Clicked = false;
         }
-        public override void Start()
+
+        public void OnClick()
         {
-            throw new NotImplementedException();
-        }
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-        }
-        public override void Awake()
-        {
-            Console.WriteLine("Awake");
-        }
-        public override void Draw()
-        {
-           
-        }
-        public override void Destroy()
-        {
-            Console.WriteLine("Destroy");
-        }
-        public override void Remove()
-        {
-            Console.WriteLine("Remove");
+
         }
 
     }
