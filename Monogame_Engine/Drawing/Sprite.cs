@@ -61,7 +61,6 @@ namespace Monogame_Engine.Drawing
         {
             spriteBatch.Draw(Owner.m_Sprite.m_Texture2D, Owner.position, Color.White);
 
-            Console.WriteLine("Sprite.Render()");
         }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Monogame_Engine
 {
-    public class Button : Component
+    public class Button : GameObject
     {
         public event EventHandler Click;
         public bool Clicked { get; private set; }
@@ -23,23 +23,17 @@ namespace Monogame_Engine
         private int textSize;
         private Rectangle rectangle;
 
-        public Button(Rectangle rectangle, string text, Texture2D texture, SpriteFont font) : base(null)
+        public Button()
         {
-            
-            Texture = texture;
-            Font = font;
-            Color = Color.White;
-            Position = Vector2.Zero;
-            Clicked = false;
-            this.text = text;
-            textSize = text.Length;
-
-
-
         }
-
-
-        
+        public override void Start()
+        {
+            throw new NotImplementedException();
+        }
+        public override void Update(GameTime gameTime)
+        {
+            base.Update(gameTime);
+        }
         public override void Awake()
         {
             Console.WriteLine("Awake");
@@ -56,9 +50,6 @@ namespace Monogame_Engine
         {
             Console.WriteLine("Remove");
         }
-        protected override void ComponentUpdate()
-        {
-            Console.WriteLine("ComponentUpdate");
-        }
+
     }
 }

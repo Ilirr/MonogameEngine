@@ -11,7 +11,7 @@ namespace Monogame_Engine
     internal class MenuState : StateManager
     {
         private List<Component> components;
-
+        private List<GameObject> buttons;
         public MenuState(Game1 game) : base(game)
         {
             components = new List<Component>();
@@ -41,9 +41,7 @@ namespace Monogame_Engine
         public override void LoadContent()
         {
             base.LoadContent();
-            //Load all the components
-            components.Add(new Button(new Rectangle(100, 200, 100, 100), "Start", game.Content.Load<Texture2D>("button"), game.Content.Load<SpriteFont>("font")));
-            components.Add(new Button(new Rectangle(100, 200, 100, 100), "Quit", game.Content.Load<Texture2D>("button"), game.Content.Load<SpriteFont>("font")));
+            
         }
         public override void Update(GameTime gameTime)
         {

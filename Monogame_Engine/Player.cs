@@ -13,7 +13,6 @@ namespace Monogame_Engine
         public static Player Instance { get { return lazy.Value; } }
 
         public Input input;
-        public Vector2 velocity;
         private float speed = 2;
         public Player()
         {
@@ -21,6 +20,8 @@ namespace Monogame_Engine
 
         public override void Start()
         {
+            Console.WriteLine("Player.Start()");
+           
             this.AddComponent<Rigidbody2D>();
             this.AddComponent<Sprite>();
             m_Sprite = this.GetComponent<Sprite>();
@@ -39,8 +40,7 @@ namespace Monogame_Engine
                 position.Y += 30;
             }
 
-
-            velocity = Vector2.Zero;
+            m_RB.velocity = Vector2.Zero;
         }
         
         public override void Awake()
