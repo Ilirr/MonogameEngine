@@ -2,21 +2,18 @@
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Monogame_Engine.Drawing;
-using System.Reflection.Metadata;
 
 namespace Monogame_Engine
 {
     internal sealed class Player : GameObject
     {
+
         private static readonly Lazy<Player> lazy = new Lazy<Player>(() => new Player());
         public static Player Instance { get { return lazy.Value; } }
 
         public Input input;
+        public Vector2 velocity;
         private float speed = 2;
         public Player()
         {
@@ -24,9 +21,10 @@ namespace Monogame_Engine
 
         public override void Start()
         {
-            Console.WriteLine("Player.Start()");
+            this.AddComponent<Rigidbody2D>();
             this.AddComponent<Sprite>();
             m_Sprite = this.GetComponent<Sprite>();
+            m_RB = this.GetComponent<Rigidbody2D>();
             m_Sprite.m_Texture2D = Game1.Instance.Content.Load<Texture2D>("Character");
 
             input = new Input();
@@ -40,6 +38,9 @@ namespace Monogame_Engine
             {
                 position.Y += 30;
             }
+
+
+            velocity = Vector2.Zero;
         }
         
         public override void Awake()
