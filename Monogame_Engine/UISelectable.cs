@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Monogame_Engine
 {
-    internal class UISelectable
+    public class UISelectable
     {
+
+
     }
 }
