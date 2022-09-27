@@ -22,6 +22,7 @@ namespace Monogame_Engine
         {
             if (currentState.IsKeyDown(key))
             {
+                Console.WriteLine("Key Pressed");
                 return true;
             }
             else
@@ -33,6 +34,7 @@ namespace Monogame_Engine
         {
             if (currentState.IsKeyDown(key) && lastState.IsKeyUp(key))
             {
+                Console.WriteLine("Key Pressed");
                 return true;
             }
             else
@@ -44,6 +46,7 @@ namespace Monogame_Engine
         {
             if (currentState.IsKeyUp(key) && lastState.IsKeyDown(key))
             {
+                Console.WriteLine("Key Pressed");
                 return true;
             }
             else

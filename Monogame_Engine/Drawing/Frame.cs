@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Monogame_Engine.Drawing
 {
-    public class Frame : Drawable, ICloneable
+    public class Frame : Sprite, ICloneable
     {
 
         public readonly Texture2D Texture;
@@ -42,7 +42,6 @@ namespace Monogame_Engine.Drawing
         {
             Texture = texture;
             TexturePosition = texturePosition;
-
             Origin = origin;
         }
         public override void Draw()
@@ -53,10 +52,10 @@ namespace Monogame_Engine.Drawing
                 //ParentSprite.Draw(Position, Origin, Scale, Vector2.One, Color, ZDepth);
             }
         }
-        public object Clone()
+        public object Clone()  //Implement Icloneable interface
         {
             var frame = new Frame(Texture, TexturePosition, Origin);
-            frame.Position = Position;
+            frame.Origin = Origin;
             frame.Scale = Scale;
             frame.Color = Color;
             return frame;

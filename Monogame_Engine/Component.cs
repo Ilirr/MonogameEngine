@@ -41,6 +41,9 @@ namespace Monogame_Engine
             get { return IsActive; }
             set { isActive = value; }
         }
+
+
+        public abstract void Draw();
         protected abstract void ComponentUpdate();
         public abstract void Awake();
         public abstract void Destroy();

@@ -2,79 +2,50 @@
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Monogame_Engine.Drawing;
 
 namespace Monogame_Engine
 {
     internal sealed class Player : GameObject
     {
+
         private static readonly Lazy<Player> lazy = new Lazy<Player>(() => new Player());
         public static Player Instance { get { return lazy.Value; } }
 
-       // public Texture2D m_Sprite = Game1.Instance.Content.Load<Texture2D>("P");
-        public Vector2 position;
-        public Vector2 velocity;
-        public bool hasJumped; // enum it
         public Input input;
-        private float speed = 50;
+        private float speed = 2;
         public Player()
         {
-
         }
+
         public override void Start()
         {
-           input = new Input();
+            Console.WriteLine("Player.Start()");
+           
+            this.AddComponent<Rigidbody2D>();
+            this.AddComponent<Sprite>();
+            m_Sprite = this.GetComponent<Sprite>();
+            m_RB = this.GetComponent<Rigidbody2D>();
+            m_Sprite.m_Texture2D = Game1.Instance.Content.Load<Texture2D>("Character");
 
-            Console.WriteLine("Start");
+            input = new Input();
+
         }
         public override void Update(GameTime gameTime)
         {
-           /* input.lastState = input.currentState;
+            input.lastState = input.currentState;
             input.currentState = Keyboard.GetState();
-            var delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
-
-
-
-            if (input.IsPressed(Keys.W) && hasJumped == false)
+            if (input.IsKeyUp(Keys.W))
             {
-
-                position.Y -= 10f;
-                velocity.Y = -5f;
-                hasJumped = true;
-
-
+                position.Y += 30;
             }
-            if (position.Y > m_Sprite.Height)
-            {
-                hasJumped = false;
-            }
-            if (hasJumped == true)
-            {
-                float i = 1;
-                velocity.Y += 0.15f * i;
 
-
-            }
-            if (hasJumped == false)
-            {
-                velocity.Y = 0f;
-            }
-            if (input.IsHeld(Keys.S))
-            {
-                position.Y += speed;
-
-            }
-            velocity.X = 0f;
-            position += velocity;
-           */
-
+            m_RB.velocity = Vector2.Zero;
         }
+        
         public override void Awake()
         {
-            this.AddComponent<TestComponent>();
+
 
             Console.WriteLine("Player is Awake");
         }

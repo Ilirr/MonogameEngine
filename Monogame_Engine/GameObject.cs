@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Graphics;
 using System.Runtime.Serialization;
-
+using Monogame_Engine.Drawing;
 
 namespace Monogame_Engine
 {
@@ -18,6 +18,12 @@ namespace Monogame_Engine
             Components = new List<Component>();
         }
         public List<Component> Components { get; set; }
+
+        public Sprite m_Sprite;
+
+        public Vector2 position = Vector2.Zero;
+
+        public Rigidbody2D m_RB;
 
         private bool isActive;
         int id;
@@ -32,6 +38,15 @@ namespace Monogame_Engine
 
             }
 
+        }
+
+        public virtual void Draw()
+        {
+            foreach (Component component in Components)
+            {
+                component.Draw();
+
+            }
         }
         public virtual void Update(GameTime gameTime)
         {

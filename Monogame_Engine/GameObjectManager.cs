@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -86,7 +87,14 @@ namespace Monogame_Engine
             }
 
         }
+        public void Render(SpriteBatch spriteBatch)
+        {
+            foreach (GameObject gameObject in activeGameObjects)
+            {
+                gameObject.m_Sprite.Render(spriteBatch);
 
+            }
 
+        }
     }
 }
