@@ -1,0 +1,12 @@
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework;
+using System;
+using Monogame_Engine.Drawing;
+
+public abstract class State
+{
+    public abstract void MenuState();
+        public abstract void GameState();
+
+}
