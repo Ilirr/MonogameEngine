@@ -53,9 +53,6 @@ namespace Monogame_Engine
             {
                 position.Y += speed * delta;
             }
-            System.Console.WriteLine("HA");
-
-
             m_RB.velocity = Vector2.Zero;
         }
         
