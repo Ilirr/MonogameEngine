@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
-
+using System.Runtime.CompilerServices;
 
 namespace Monogame_Engine.Drawing
 {
@@ -29,18 +29,16 @@ namespace Monogame_Engine.Drawing
         public Sprite() : base(null)
         {
 
-
         }
 
 
         //Subclass (Sprite) is abstract, does not need to override Draw()
-        protected override void ComponentUpdate()
+        protected override void ComponentUpdate(GameTime gameTime)
         {
-            Console.WriteLine("Sprite.ComponentUpdate()");
-
         }
         public override void Awake()
         {
+            Initialized = true;
             Console.WriteLine("Sprite.Awake()");
         }
         public override void Destroy()

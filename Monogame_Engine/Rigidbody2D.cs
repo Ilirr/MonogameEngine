@@ -11,7 +11,7 @@ namespace Monogame_Engine
     {
 
         public Vector2 velocity;
-        public float acceleration;
+        public float acceleration = 100;
 
         public Rigidbody2D() : base(null)
         {
@@ -19,14 +19,16 @@ namespace Monogame_Engine
         }
 
 
-        protected override void ComponentUpdate()
+        protected override void ComponentUpdate(GameTime gameTime)
         {
-            Console.WriteLine("Rigidbody.ComponentUpdate()");
+            //float delta = (float)gameTime.ElapsedGameTime.TotalSeconds;
+           // velocity = acceleration * delta;
 
         }
         public override void Awake()
         {
             Console.WriteLine("Rigidbody.Awake()");
+            Initialized = true;
         }
         public override void Destroy()
         {

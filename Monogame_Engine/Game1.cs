@@ -55,6 +55,7 @@ namespace Monogame_Engine
                 RenderFrame();  // each render object draws itself
 
             */
+            Player.Update();
 
             base.Update(gameTime);
         }

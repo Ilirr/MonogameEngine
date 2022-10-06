@@ -20,7 +20,6 @@ namespace Monogame_Engine.Drawing
         public Vector2 Scale = Vector2.One;
         public Vector2 Origin;
         public Color Color = Color.White;
-        public Vector4 ZDepth = Vector4.Zero;
 
         private Sprite _parentSprite = null;
         public Sprite ParentSprite

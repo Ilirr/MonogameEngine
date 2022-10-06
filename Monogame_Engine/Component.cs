@@ -15,45 +15,26 @@ namespace Monogame_Engine
         {
             this.Owner = gameObject;
         }
-        public GameObject Owner { get; internal set; } //  Internal member are accessible only within the assembly by inheritance, or by instance of class
+        public GameObject Owner { get; internal set; } 
 
-
-        /* public GameObject Owner
-         {
-             get { return Owner; }
-             set { Owner = value; }
-         }
-        */
         public bool Initialized { get; internal set; } = false;
 
 
-        private bool isActive;
-        private bool visible;
-
-        public bool Visible
-        {
-            get { return visible; }
-            set { visible = value; }
-        }
-
-        public bool IsActive
-        {
-            get { return IsActive; }
-            set { isActive = value; }
-        }
-
-
         public abstract void Draw();
-        protected abstract void ComponentUpdate();
+        protected abstract void ComponentUpdate(GameTime gameTime);
         public abstract void Awake();
         public abstract void Destroy();
         public abstract void Remove();
         public void Update(GameTime gameTime)
         {
-            if (IsActive)
+            if(Initialized)
             {
-                this.ComponentUpdate();
+                
+                this.ComponentUpdate(gameTime);
+
             }
+
+
         }
 
 
